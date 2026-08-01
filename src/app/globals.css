@@ -13,6 +13,7 @@
   --font-jersey: var(--font-jersey);
   --font-unica: var(--font-unica);
   --font-space: var(--font-space-mono);
+  --font-space-grotesk: var(--font-space-grotesk);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -26,4 +27,86 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/*Hero typing animation*/
+.typing-animation {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid #44a5ff;
+  width: 0;
+  animation:
+    typing 2.8s steps(28, end) forwards,
+    blink-caret 0.8s step-end 4,
+    hide-caret 0s 3.2s forwards;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  50% {
+    border-color: transparent;
+  }
+}
+
+@keyframes hide-caret {
+  to {
+    border-right-color: transparent;
+  }
+}
+
+@media (max-width: 400px) {
+  .typing-animation{
+    white-space: normal;
+  }
+}
+
+/*Hero light effect*/
+
+/* Floating Light Particles */
+.floating-particles {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  bottom: -30px;
+  width: 6px;
+  height: 6px;
+  border-radius: 9999px;
+  background: radial-gradient(circle, #ffffff 0%, #86a9ff 40%, #b47cff 100%);
+  box-shadow: 0 0 12px #86a9ff, 0 0 20px #b47cff;
+  opacity: 0;
+  animation: floatUp linear infinite;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) translateX(0) scale(0.6);
+    opacity: 0;
+  }
+
+  15% {
+    opacity: 0.9;
+  }
+
+  70% {
+    opacity: 0.8;
+  }
+
+  100% {
+    transform: translateY(-120vh) translateX(40px) scale(1.2);
+    opacity: 0;
+  }
 }

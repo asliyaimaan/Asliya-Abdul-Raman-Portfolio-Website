@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import { Inter, Space_Mono, Jersey_10, Unica_One } from "next/font/google";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, Space_Mono, Jersey_10, Unica_One, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import Navbar from '@/components/layout/navbar';
+import Footer from '@/components/layout/footer';
 
 const inter = Inter({
   subsets: ["latin"],
@@ -26,14 +26,10 @@ const unica = Unica_One({
   variable: "--font-unica",
 });
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-space-grotesk",
 });
 
 export const metadata: Metadata = {
@@ -49,12 +45,13 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`dark ${spaceMono.variable} ${jersey.variable} ${unica.variable}`}
+      className={`dark ${spaceMono.variable} ${jersey.variable} ${unica.variable} ${spaceGrotesk.variable}`}
     >
       <body className={`${inter.className} bg-[#0B0F19] text-white min-h-screen antialiased`}>
         <Navbar />
         {/* pt-16 ensures page content clears the fixed navbar */}
         <main className="pt-16">{children}</main>
+        <Footer />
       </body>
     </html>
   );

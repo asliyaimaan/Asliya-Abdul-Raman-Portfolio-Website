@@ -9,7 +9,7 @@ export default function Hero() {
       {/* Full-width Background Image Container */}
       <div className="absolute inset-0 z-0 w-full h-full">
         <Image
-          src="/images/butterfly-bg.png"
+          src="/images/hero-bg.png"
           alt="Hero Background"
           fill
           priority
@@ -17,10 +17,25 @@ export default function Hero() {
         />
         {/* Dark overlay for readability */}
         <div className="absolute inset-0 bg-[#080a22]/60 backdrop-blur-[1px]" />
+
+        {/* Lighting Effect */}
+        <div className="floating-particles z-[1]">
+          {[...Array(20)].map((_, i) => (
+            <span
+              key={i}
+              className="particle"
+              style={{
+                left: `${Math.random() * 100}%`,
+                animationDuration: `${6 + Math.random() * 6}s`,
+                animationDelay: `${Math.random() * 6}s`,
+              }}
+            />
+          ))}
+        </div>
       </div>
 
       {/* Tighter max-w-6xl container to pull text and image closer to the center */}
-      <div className="relative z-10 max-w-6xl w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center">
+      <div className="relative z-10 max-w-6xl w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
         
         {/* Left Column: Text & CTA (takes 7 columns, text wraps better and closes gap) */}
         <div className="lg:col-span-7 flex flex-col items-start text-left">
@@ -28,8 +43,13 @@ export default function Hero() {
             Web & Software Development Student
           </span>
 
-          <h1 className="text-4xl sm:text-6xl font-bold font-inter tracking-tight text-white mb-6 leading-tight">
-            Hi, I’m <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#44a5ff] via-[#6db9ff] to-purple-400">Asliya Abdul Raman</span>
+          <h1 className="text-4xl sm:text-6xl font-space-grotesk font-bold tracking-tight text-white mb-6 leading-tight">
+            <span>Hi, I’m</span>
+            <div className="mt-2">
+              <span className="typing-animation inline-block text-transparent bg-clip-text bg-gradient-to-r from-[#44a5ff] via-[#648dff] to-purple-400">
+                Asliya Abdul Raman
+              </span>
+            </div>
           </h1>
 
           <p className="text-gray-300 text-base sm:text-lg max-w-xl mb-8 leading-relaxed">
@@ -48,7 +68,7 @@ export default function Hero() {
 
             <Link
               href="/contact"
-              className="px-6 py-3 rounded-xl bg-[#161B2E]/80 hover:bg-[#1E2542] text-gray-200 border border-[#31335b] font-medium text-sm transition-all"
+              className="px-6 py-3 rounded-xl bg-transparent hover:bg-[#1E2542]/60 text-gray-200 border border-[#31335b] font-medium text-sm transition-all"
             >
               Get in touch
             </Link>
@@ -59,7 +79,7 @@ export default function Hero() {
             {techBadges.map((tech) => (
               <span
                 key={tech}
-                className="px-3.5 py-1.5 rounded-2xl bg-[#121630]/60 border border-[#31335b]/60 text-xs font-unica text-gray-300 shadow-sm"
+                className="px-3.5 py-1.5 rounded-2xl bg-transparent border border-[#31335b]/60 text-xs font-unica text-gray-300 shadow-sm"
               >
                 {tech}
               </span>
@@ -68,8 +88,8 @@ export default function Hero() {
         </div>
 
         {/* Right Column: Portrait Photo (Hidden on screens < 1024px, visible on lg and up) */}
-        <div className="hidden lg:flex lg:col-span-5 justify-end">
-          <div className="relative w-full max-w-[320px] aspect-[4/5] rounded-[10px] overflow-hidden border border-[#31335b]/80 shadow-2xl bg-[#121630]">
+        <div className="hidden lg:flex lg:col-span-5 justify-center">
+          <div className="relative w-full max-w-[350px] aspect-[4/5] rounded-[10px] overflow-hidden border border-[#648dff] shadow-2xl shadow-[#648dff]/60 bg-[#121630]">
             <Image
               src="/images/portfolio-pic.png"
               alt="Asliya Abdul Raman"

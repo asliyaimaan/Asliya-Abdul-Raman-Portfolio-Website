@@ -27,10 +27,10 @@ export default function Navbar() {
           className="flex items-center group opacity-90 hover:opacity-100 transition-opacity py-0.5 overflow-hidden"
         >
           <Image 
-            src="/images/aar-icon.png" 
+            src="/images/nav-icon.png" 
             alt="Asliya.dev Logo" 
-            width={320} 
-            height={80} 
+            width={300} 
+            height={70} 
             priority
             className="h-12 w-auto max-w-none object-contain scale-125 origin-left"
           />
