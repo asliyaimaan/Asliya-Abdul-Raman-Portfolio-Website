@@ -21,7 +21,7 @@ const projects = [
 
 export default function RecentProjects() {
   return (
-    <section className="pb-20 px-6 sm:px-12 lg:px-16 w-full bg-[#080a22]">
+    <section className="pb-40 px-6 sm:px-12 lg:px-16 w-full bg-[#080a22]">
       <div className="max-w-6xl mx-auto">
         {/* Section Header with "All projects" link */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-12 gap-4">

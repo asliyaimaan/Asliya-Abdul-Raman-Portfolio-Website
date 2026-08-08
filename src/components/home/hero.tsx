@@ -53,7 +53,7 @@ export default function Hero() {
           </h1>
 
           <p className="text-gray-300 text-base sm:text-lg max-w-xl mb-8 leading-relaxed">
-            I build web and software experiences that feel fast, clear and a little bit electric. Currently studying, constantly shipping, and always chasing the next idea worth prototyping.
+            I love to build creative UI and fun projects. Currently studying, practicing and always chasing the next idea worth prototyping.
           </p>
 
           {/* CTA Buttons */}
@@ -89,7 +89,7 @@ export default function Hero() {
 
         {/* Right Column: Portrait Photo (Hidden on screens < 1024px, visible on lg and up) */}
         <div className="hidden lg:flex lg:col-span-5 justify-center">
-          <div className="relative w-full max-w-[350px] aspect-[4/5] rounded-[10px] overflow-hidden border border-[#648dff] shadow-2xl shadow-[#648dff]/60 bg-[#121630]">
+          <div className="relative w-full max-w-[350px] aspect-[4/5] rounded-[10px] overflow-hidden border border-[#648dff] shadow-2xl shadow-[0_15px_30px_15px_rgba(68,165,255,0.3)] bg-[#121630]">
             <Image
               src="/images/portfolio-pic.png"
               alt="Asliya Abdul Raman"

@@ -1,4 +1,6 @@
 import PageHeader from '@/components/ui/header';
+import AboutMe from '@/components/about/aboutMe';
+import Education from '@/components/about/education';
 
 export default function AboutPage() {
   return (
@@ -9,11 +11,8 @@ export default function AboutPage() {
         description="A short introduction to who I am, how I got into code, and what keeps me building."
       />
 
-      <div className="flex-grow flex items-center justify-center py-20 text-center px-6">
-        <p className="text-gray-400 max-w-md">
-          This page is currently under construction. Check back soon for updates!
-        </p>
-      </div>
+      <AboutMe />
+      <Education/>
     </div>
   );
 }
